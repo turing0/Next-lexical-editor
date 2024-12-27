@@ -160,7 +160,6 @@ export default function LexicalEditor({
 }
 
 
-
 const placeholder =
   "Write something, or press `space` for AI, `/` for commands";
 
@@ -172,6 +171,7 @@ function Editor({SavelocalStorage}:{SavelocalStorage:boolean}) {
   const [Loading,setLoading]=useState(false)
 
   function Save(){
+    console.log("save to db")
     // save it database
   }
 
@@ -196,10 +196,10 @@ function Editor({SavelocalStorage}:{SavelocalStorage:boolean}) {
 
   return (
     <div className="w-full min-h-screen h-full">
-      <div className="flex  flex-row items-center m-x-4 w-full pt-6">
+      <div className="flex flex-row items-center m-x-4 w-full pt-6">
         {Loading && <Loader2 className="animate-spin h-5 w-5"/>}
-        <Button className=" rounded-3xl h-7">
-        save
+        <Button className="rounded-3xl h-7" onClick={Save}>
+          Publish
         </Button>
       </div>
       {isEditable && <ToolbarPlugin setIsLinkEditMode={setIsLinkEditMode} />}

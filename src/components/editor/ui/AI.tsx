@@ -178,7 +178,6 @@ export default function AI({ editor }: Props) {
                 newParagraphNode.append(newTextNode);
                 selection.insertNodes([newParagraphNode]);
               }  
-  
                 
               }
             
@@ -199,16 +198,19 @@ export default function AI({ editor }: Props) {
     }
   };
 
-
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger>
-        <ShinyButton
-          className="h-[15px] gap-x-2 px-3 flex items-center justify-center flex-row"
+        {/* <ShinyButton
+          className="h-[15px] gap-x-1 flex items-center justify-center flex-row"
         >
-          <Sparkles className="w-4 h-4 text-purple-500" />
-          <span className="xl:flex hidden">Ask AI</span>
-        </ShinyButton>
+          <Sparkles className="size-4 text-purple-500" />
+          <span className="xl:flex hidden">AI</span>
+        </ShinyButton> */}
+        <div className="mx-1 gap-x-1 flex items-center justify-center flex-row text-purple-500 font-semibold">
+          <Sparkles className="size-4" />
+          <span className="xl:flex hidden text-sm">AI</span>
+        </div>
       </PopoverTrigger>
       <PopoverContent className="mt-3 p-2 gap-y-1 w-full flex items-center flex-col justify-center">
         {types.map((e) => {

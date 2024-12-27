@@ -423,17 +423,17 @@ export default function ToolbarPlugin({
         />
       ),
     },
-    {
-      label: "font-size",
-      title: "",
-      render: (
-        <FontSize
-          selectionFontSize={fontSize.slice(0, -2)}
-          editor={activeEditor}
-          disabled={!isEditable}
-        />
-      ),
-    },
+    // {
+    //   label: "font-size",
+    //   title: "",
+    //   render: (
+    //     <FontSize
+    //       selectionFontSize={fontSize.slice(0, -2)}
+    //       editor={activeEditor}
+    //       disabled={!isEditable}
+    //     />
+    //   ),
+    // },
     {
       label: "Bold",
       disabled: !isEditable,
@@ -530,18 +530,18 @@ export default function ToolbarPlugin({
         />
       ),
     },
-    {
-      label: elementFormat,
-      title: "text alignt",
-      render: (
-        <ElementFormatDropdown
-        disabled={!isEditable}
-        value={elementFormat}
-        editor={activeEditor}
-        isRTL={isRTL}
-      />
-      ),
-    },
+    // {
+    //   label: elementFormat,
+    //   title: "text alignt",
+    //   render: (
+    //     <ElementFormatDropdown
+    //       disabled={!isEditable}
+    //       value={elementFormat}
+    //       editor={activeEditor}
+    //       isRTL={isRTL}
+    //     />
+    //   ),
+    // },
     {
       label: "Insert",
       title: "Insert",
@@ -549,7 +549,6 @@ export default function ToolbarPlugin({
         <BlcokInsertDropDown
           isEditable={!isEditable}
           activeEditor={activeEditor}
-        
       />
       ),
     },

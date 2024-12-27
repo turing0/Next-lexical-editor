@@ -200,19 +200,6 @@ const ELEMENT_FORMAT_OPTIONS: {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 const ElementFormatDropdown = forwardRef(({ editor, value, isRTL, disabled = false }:{  editor: LexicalEditor;
   value: ElementFormatType;
   isRTL: boolean;
@@ -394,6 +381,4 @@ const ElementFormatDropdown = forwardRef(({ editor, value, isRTL, disabled = fal
 ElementFormatDropdown.displayName = "ElementFormatDropdown";
 
 export default ElementFormatDropdown;
-
-
 
