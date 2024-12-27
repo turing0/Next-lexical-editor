@@ -1,10 +1,7 @@
 import { HfInference } from "@huggingface/inference";
 
 
-
-
 const inference = new HfInference(process.env.AIKey);
-
 
 const countTokens = (text: string): number => {
   // This is a placeholder; use an appropriate tokenizer for your model
@@ -27,7 +24,6 @@ async function* sendREQ(userQuestion: string,DefualtSystemSetting:boolean) {
     userQuestion = truncateText(userQuestion, maxInputTokens);
     inputTokens = countTokens(userQuestion);
   }
-
 
   
   for await (const chunk of inference.chatCompletionStream({
@@ -52,7 +48,6 @@ async function* sendREQ(userQuestion: string,DefualtSystemSetting:boolean) {
     }
   }
 }
-
 
 
 export async function ask(
@@ -97,29 +92,12 @@ export async function ask(
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export async function WriteAI(
   Ques: string,
   systemMessage: string,
   onChunkReceived?: (chunk: string, ResponsedTo?: string) => void,
 ) {
-  
 
-  
-  
   const query = `
     ${systemMessage}
     response only with your answoer no more no less
@@ -127,13 +105,9 @@ export async function WriteAI(
     ${Ques}
   `;
 
-
   for await (const chunk of sendREQ(query, false)) {
     if (onChunkReceived) {
       onChunkReceived(chunk, Ques);
     }
   }
 }
-
-
-

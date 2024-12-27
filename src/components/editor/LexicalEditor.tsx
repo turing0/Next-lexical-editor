@@ -203,11 +203,11 @@ function Editor({SavelocalStorage}:{SavelocalStorage:boolean}) {
         </Button>
       </div>
       {isEditable && <ToolbarPlugin setIsLinkEditMode={setIsLinkEditMode} />}
-      <div className=" relative">
+      <div className="relative">
         <HistoryPlugin externalHistoryState={historyState} />
         <RichTextPlugin
           contentEditable={
-            <div ref={onRef} className="mt-2 overflow-x-hidden">
+            <div ref={onRef} className="overflow-x-hidden">
               <ContentEditable autoFocus={true} className="editor-input p-4" />
             </div>
           }

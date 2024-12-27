@@ -291,18 +291,18 @@ function TextFormatFloatingToolbar({
       title: IS_APPLE ? "Underline (⌘U)" : "Underline (Ctrl+U)",
       active: isUnderline,
     },
-    {
-      label:"Strikethrough",
-      title:"Strikethrough",
-      command:()=>{
-        editor.dispatchCommand(
-          FORMAT_TEXT_COMMAND,
-          'strikethrough',
-        )
-      },
-      icon:<StrikethroughIcon className={"w-4 h-4"} />,
-      active:isStrikethrough
-    },  
+    // {
+    //   label:"Strikethrough",
+    //   title:"Strikethrough",
+    //   command:()=>{
+    //     editor.dispatchCommand(
+    //       FORMAT_TEXT_COMMAND,
+    //       'strikethrough',
+    //     )
+    //   },
+    //   icon:<StrikethroughIcon className={"w-4 h-4"} />,
+    //   active:isStrikethrough
+    // },  
     {
       label: "code",
       command: () => editor.dispatchCommand(FORMAT_TEXT_COMMAND, "code"),
@@ -317,52 +317,52 @@ function TextFormatFloatingToolbar({
       icon: <Link2 className={"w-4 h-4"} />,
       active: isLink,
     },
-    {
-      lable:"div-1",
-      render:(
-        <Separator orientation='vertical' className='h-[30px] w-[1px] mx-1'/>
-      )
-    },
-    {
-      label: "color",
-      title:"font color",
-      render: (
-        <DropdownColorPicker
-          theme={theme!}
-          buttonClassName="h-[30px] px-1 "
-          buttonIconClassName={
-            <div
-              className="h-[25px] w-[25px] rounded-full p-1 flex items-center justify-center   text-xs"
-              style={{ background: fontColor }}
-            >
-              A
-            </div>
-          }
-          color={fontColor}
-          Onchange={onFontColorSelect}
-          title="font color"
-        />
-      ),
-    },
-    {
-      label: "Background color",
-      title:"Background color",
-      render: (
-        <DropdownColorPicker
-          theme={theme!}
-          buttonClassName="h-[30px]  px-1 "
-          buttonIconClassName={
-            <div
-              className="h-[25px] w-[25px] rounded-full p-1 "
-              style={{ background: bgColor }}
-            />
-          }
-          color={bgColor}
-          Onchange={onBgColorSelect}
-          title="background color"
-        />
-      ),
-    },
+    // {
+    //   lable:"div-1",
+    //   render:(
+    //     <Separator orientation='vertical' className='h-[30px] w-[1px] mx-1'/>
+    //   )
+    // },
+    // {
+    //   label: "color",
+    //   title:"font color",
+    //   render: (
+    //     <DropdownColorPicker
+    //       theme={theme!}
+    //       buttonClassName="h-[30px] px-1 "
+    //       buttonIconClassName={
+    //         <div
+    //           className="h-[25px] w-[25px] rounded-full p-1 flex items-center justify-center   text-xs"
+    //           style={{ background: fontColor }}
+    //         >
+    //           A
+    //         </div>
+    //       }
+    //       color={fontColor}
+    //       Onchange={onFontColorSelect}
+    //       title="font color"
+    //     />
+    //   ),
+    // },
+    // {
+    //   label: "Background color",
+    //   title:"Background color",
+    //   render: (
+    //     <DropdownColorPicker
+    //       theme={theme!}
+    //       buttonClassName="h-[30px]  px-1 "
+    //       buttonIconClassName={
+    //         <div
+    //           className="h-[25px] w-[25px] rounded-full p-1 "
+    //           style={{ background: bgColor }}
+    //         />
+    //       }
+    //       color={bgColor}
+    //       Onchange={onBgColorSelect}
+    //       title="background color"
+    //     />
+    //   ),
+    // },
    
   ];
 
@@ -418,7 +418,7 @@ function TextFormatFloatingToolbar({
         })
       }
 
-      <BorderBeam size={100} duration={20} delay={9} />
+      {/* <BorderBeam size={100} duration={20} delay={9} /> */}
 
     </div>
   );

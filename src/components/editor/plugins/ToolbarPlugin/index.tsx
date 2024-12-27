@@ -460,18 +460,18 @@ export default function ToolbarPlugin({
       title: IS_APPLE ? "Underline (⌘U)" : "Underline (Ctrl+U)",
       active: isUnderline,
     },
-    {
-      label:"Strikethrough",
-      title:"Strikethrough",
-      command:()=>{
-        activeEditor.dispatchCommand(
-          FORMAT_TEXT_COMMAND,
-          'strikethrough',
-        )
-      },
-      icon:<StrikethroughIcon className={IconStyle} />,
-      active:isStrikethrough
-    },  
+    // {
+    //   label:"Strikethrough",
+    //   title:"Strikethrough",
+    //   command:()=>{
+    //     activeEditor.dispatchCommand(
+    //       FORMAT_TEXT_COMMAND,
+    //       'strikethrough',
+    //     )
+    //   },
+    //   icon:<StrikethroughIcon className={IconStyle} />,
+    //   active:isStrikethrough
+    // },  
     {
       label: "code",
       disabled: !isEditable,
@@ -488,48 +488,48 @@ export default function ToolbarPlugin({
       icon: <Link2 className={IconStyle} />,
       active: isLink,
     },
-    {
-      label: "color",
-      title:"font color",
-      render: (
-        <DropdownColorPicker
-          theme={theme!}
-          disabled={!isEditable}
-          buttonClassName="h-[32px] mt-[1px] px-1 "
-          buttonIconClassName={
-            <div
-              className="h-[25px] w-[25px] rounded-full p-1 flex items-center justify-center   text-xs"
-              style={{ background: fontColor }}
-            >
-              A
-            </div>
-          }
-          color={fontColor}
-          Onchange={onFontColorSelect}
-          title="font color"
-        />
-      ),
-    },
-    {
-      label: "Background color",
-      title:"Background color",
-      render: (
-        <DropdownColorPicker
-          theme={theme!}
-          disabled={!isEditable}
-          buttonClassName="h-[32px]  px-1 "
-          buttonIconClassName={
-            <div
-              className="h-[25px] w-[25px] rounded-full p-1 "
-              style={{ background: bgColor }}
-            />
-          }
-          color={bgColor}
-          Onchange={onBgColorSelect}
-          title="background color"
-        />
-      ),
-    },
+    // {
+    //   label: "color",
+    //   title:"font color",
+    //   render: (
+    //     <DropdownColorPicker
+    //       theme={theme!}
+    //       disabled={!isEditable}
+    //       buttonClassName="h-[32px] mt-[1px] px-1 "
+    //       buttonIconClassName={
+    //         <div
+    //           className="h-[25px] w-[25px] rounded-full p-1 flex items-center justify-center   text-xs"
+    //           style={{ background: fontColor }}
+    //         >
+    //           A
+    //         </div>
+    //       }
+    //       color={fontColor}
+    //       Onchange={onFontColorSelect}
+    //       title="font color"
+    //     />
+    //   ),
+    // },
+    // {
+    //   label: "Background color",
+    //   title:"Background color",
+    //   render: (
+    //     <DropdownColorPicker
+    //       theme={theme!}
+    //       disabled={!isEditable}
+    //       buttonClassName="h-[32px]  px-1 "
+    //       buttonIconClassName={
+    //         <div
+    //           className="h-[25px] w-[25px] rounded-full p-1 "
+    //           style={{ background: bgColor }}
+    //         />
+    //       }
+    //       color={bgColor}
+    //       Onchange={onBgColorSelect}
+    //       title="background color"
+    //     />
+    //   ),
+    // },
     // {
     //   label: elementFormat,
     //   title: "text alignt",
