@@ -119,15 +119,15 @@ const PlaygroundNodes = [
 export default function LexicalEditor({
   initialEditorState,
   SavelocalStorage=true,
-  loadFromLocalStorge
+  loadFromLocalStorage
 }: {
   initialEditorState?: any;
   SavelocalStorage:boolean
-  loadFromLocalStorge?:boolean
+  loadFromLocalStorage?:boolean
 }) {
   
   function Load() {
-    if (typeof window !== "undefined" && loadFromLocalStorge) {
+    if (typeof window !== "undefined" && loadFromLocalStorage) {
       const data = localStorage.getItem("editorState");
       return data;
     } else {
@@ -196,12 +196,12 @@ function Editor({SavelocalStorage}:{SavelocalStorage:boolean}) {
 
   return (
     <div className="w-full min-h-screen h-full">
-      <div className="flex flex-row items-center m-x-4 w-full pt-6">
+      {/* <div className="flex flex-row items-center m-x-4 w-full pt-6">
         {Loading && <Loader2 className="animate-spin h-5 w-5"/>}
         <Button className="rounded-3xl h-7" onClick={Save}>
-          Publish
+          PUBLISH
         </Button>
-      </div>
+      </div> */}
       {isEditable && <ToolbarPlugin setIsLinkEditMode={setIsLinkEditMode} />}
       <div className="relative">
         <HistoryPlugin externalHistoryState={historyState} />
