@@ -202,7 +202,7 @@ function Editor({SavelocalStorage}:{SavelocalStorage:boolean}) {
           PUBLISH
         </Button>
       </div> */}
-      {isEditable && <ToolbarPlugin setIsLinkEditMode={setIsLinkEditMode} />}
+      {/* {isEditable && <ToolbarPlugin setIsLinkEditMode={setIsLinkEditMode} />} */}
       <div className="relative">
         <HistoryPlugin externalHistoryState={historyState} />
         <RichTextPlugin
