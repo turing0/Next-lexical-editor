@@ -194,7 +194,9 @@ function Editor({SavelocalStorage}:{SavelocalStorage:boolean}) {
     }
   };
   const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
   const [isFocused, setIsFocused] = useState(false);
+  const [isAuthorFocused, setIsAuthorFocused] = useState(false);
 
   return (
     <div className="w-full min-h-screen h-full">
@@ -222,9 +224,40 @@ function Editor({SavelocalStorage}:{SavelocalStorage:boolean}) {
             }}
             placeholder="Title"
             // onFocus={() => setIsFocused(true)}
-            onFocus={() => setIsFocused(title.length > 0)}
-            onBlur={() => setIsFocused(false)}
+            onFocus={() => {
+              setIsFocused(title.length > 0)
+              setIsAuthorFocused(author.length > 0)
+            }}
+            onBlur={() => {
+              setIsFocused(false)
+              setIsAuthorFocused(false)
+            }}
             className="w-full text-3xl font-medium outline-none border-none placeholder:text-gray-400"
+          />
+        </div>
+        <div className="relative">
+          {isAuthorFocused && (
+            <span className="absolute left-0 top-1/2 -translate-x-[calc(100%+8px)] -translate-y-1/2 text-gray-400 text-base font-normal leading-normal">
+              Author
+            </span>
+          )}
+          <input
+            type="text"
+            value={author}
+            onChange={(e) => {
+              setAuthor(e.target.value)
+              setIsAuthorFocused(e.target.value.length > 0)
+            }}
+            placeholder="Author"
+            onFocus={() => {
+              setIsAuthorFocused(author.length > 0)
+              setIsFocused(title.length > 0)
+            }}
+            onBlur={() => {
+              setIsAuthorFocused(false)
+              setIsFocused(false)
+            }}
+            className="w-full text-base font-normal outline-none border-none text-gray-400"
           />
         </div>
       </div>
