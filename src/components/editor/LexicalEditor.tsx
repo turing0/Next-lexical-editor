@@ -65,9 +65,9 @@ import CollapsiblePlugin from "./plugins/CollapsiblePlugin";
 
 import dynamic from "next/dynamic";
 import { EditorState } from "lexical";
-import { Button } from "../ui/button";
 import { OnChangePlugin } from "./plugins/OnChangePlugin";
 import { Loader2 } from "lucide-react";
+
 const ToolbarPlugin = dynamic(() => import("./plugins/ToolbarPlugin"), {
   ssr: false,
 });
@@ -193,6 +193,8 @@ function Editor({SavelocalStorage}:{SavelocalStorage:boolean}) {
       setFloatingAnchorElem(_floatingAnchorElem);
     }
   };
+  const [title, setTitle] = useState("");
+  const [isFocused, setIsFocused] = useState(false);
 
   return (
     <div className="w-full min-h-screen h-full">
@@ -202,6 +204,31 @@ function Editor({SavelocalStorage}:{SavelocalStorage:boolean}) {
           PUBLISH
         </Button>
       </div> */}
+
+      {/* title */}
+      <div className="mt-6 mb-6 p-1">
+        <div className="relative">
+          {isFocused && (
+            <span className="absolute left-0 top-1/2 -translate-x-[calc(100%+8px)] -translate-y-1/2 text-gray-400 text-3xl font-medium leading-normal">
+              Title
+            </span>
+          )}
+          <input
+            type="text"
+            value={title}
+            onChange={(e) => {
+              setTitle(e.target.value)
+              setIsFocused(e.target.value.length > 0)
+            }}
+            placeholder="Title"
+            // onFocus={() => setIsFocused(true)}
+            onFocus={() => setIsFocused(title.length > 0)}
+            onBlur={() => setIsFocused(false)}
+            className="w-full text-3xl font-medium outline-none border-none placeholder:text-gray-400"
+          />
+        </div>
+      </div>
+
       {/* {isEditable && <ToolbarPlugin setIsLinkEditMode={setIsLinkEditMode} />} */}
       <div className="relative">
         <HistoryPlugin externalHistoryState={historyState} />
