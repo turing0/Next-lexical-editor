@@ -258,16 +258,16 @@ function TextFormatFloatingToolbar({
         />
       )
     },
-    {
-      label: "font-family",
-      title: "font",
-      render: (
-        <FontDropDown
-          editor={editor}
-          value={fontFamily}
-        />
-      ),
-    },
+    // {
+    //   label: "font-family",
+    //   title: "font",
+    //   render: (
+    //     <FontDropDown
+    //       editor={editor}
+    //       value={fontFamily}
+    //     />
+    //   ),
+    // },
     {
       label: "Bold",
       command: () => editor.dispatchCommand(FORMAT_TEXT_COMMAND, "bold"),
@@ -369,7 +369,6 @@ function TextFormatFloatingToolbar({
   
   return (
     <div ref={popupCharStylesEditorRef} className={
-
       ` 
       absolute  w-fit min-w-[350px] gap-x-1 h-[40px] top-0  p-2 flex flex-row items-center  z-50 will-change-transform   rounded-md border bg-popover  
       text-popover-foreground shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out 
@@ -377,7 +376,6 @@ function TextFormatFloatingToolbar({
       data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2
       `
     }>
-        
         
      {
         CommandList.map((e) => {

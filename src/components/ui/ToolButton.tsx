@@ -26,7 +26,6 @@ const ToolButton = forwardRef<HTMLButtonElement, ToolButtonProps>(
           h-[32px] px-2 text-sm
           text-primary 
           transition-colors duration-300  
-          border
           `,
           checked ? "bg-muted-foreground/70 dark:bg-muted-foreground/40" : "hover:bg-muted-foreground/70 dark:hover:bg-muted-foreground/40",  // Updated condition for background color
           style

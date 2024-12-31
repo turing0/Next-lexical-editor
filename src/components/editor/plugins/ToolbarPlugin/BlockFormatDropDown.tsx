@@ -123,7 +123,7 @@ export function BlockFormatDropDown({
   return (
     <DropDown
       disabled={disabled}
-      buttonClassName="flex flex-row  gap-x-3  items-center h-[32px]"
+      buttonClassName="flex flex-row  gap-x-3  items-center h-[32px] border-0"
       buttonIconClassName={ActiveBlockIcon}
       buttonLabel={ActiveBlockName}
     >

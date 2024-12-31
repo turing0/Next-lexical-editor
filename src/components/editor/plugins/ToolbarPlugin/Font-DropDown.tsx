@@ -39,7 +39,6 @@ const FONT_SIZE_OPTIONS: [string, string][] = [
 ];
   
 
-
 export default function FontDropDown({ editor,value,style="font-family",disabled = false,}: Props) {
   const handleClick = useCallback(
       (option: string) => {
@@ -54,8 +53,7 @@ export default function FontDropDown({ editor,value,style="font-family",disabled
       },
       [editor, style],
   );
-    
-      
+
   const buttonAriaLabel =
     style === 'font-family'
       ? 'Formatting options for font family'
@@ -69,7 +67,6 @@ export default function FontDropDown({ editor,value,style="font-family",disabled
             className="w-[1px]  h-[30px] mx-2"
           />
           <DropDown
-          
             disabled={disabled}
             buttonClassName="flex flex-row  gap-x-3  items-center h-[32px]"
             buttonLabel={value}          
@@ -84,7 +81,6 @@ export default function FontDropDown({ editor,value,style="font-family",disabled
             {(style === 'font-family' ? FONT_FAMILY_OPTIONS : FONT_SIZE_OPTIONS).map(
               ([option, text]) => (
                 <DropDownItem
-                
                   onClick={() => handleClick(option)}
                   key={option}>
                   <span style={{ fontFamily: option }}>{option}</span>
