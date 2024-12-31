@@ -208,10 +208,10 @@ function Editor({SavelocalStorage}:{SavelocalStorage:boolean}) {
       </div> */}
 
       {/* title */}
-      <div className="mt-6 mb-6 p-1">
+      <div className="mt-6 p-1">
         <div className="relative">
           {isFocused && (
-            <span className="absolute left-0 top-1/2 -translate-x-[calc(100%+8px)] -translate-y-1/2 text-gray-400 text-3xl font-medium leading-normal">
+            <span className="absolute left-0 top-1/2 -translate-x-[calc(100%+16px)] -translate-y-1/2 text-gray-400 text-3xl font-medium leading-normal">
               Title
             </span>
           )}
@@ -237,7 +237,7 @@ function Editor({SavelocalStorage}:{SavelocalStorage:boolean}) {
         </div>
         <div className="relative">
           {isAuthorFocused && (
-            <span className="absolute left-0 top-1/2 -translate-x-[calc(100%+8px)] -translate-y-1/2 text-gray-400 text-base font-normal leading-normal">
+            <span className="absolute left-0 top-1/2 -translate-x-[calc(100%+16px)] -translate-y-1/2 text-gray-400 text-base font-normal leading-normal">
               Author
             </span>
           )}
