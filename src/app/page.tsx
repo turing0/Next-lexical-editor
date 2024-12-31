@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="container max-w-5xl mx-auto h-full px-0 md:px-20 relative"> {/* Added relative here */}
+    <div className="container max-w-5xl mx-auto h-full px-0 md:px-20 relative">
       <div className="flex flex-col md:flex-row md:items-start md:justify-between max-sm:px-2">
         <div className="flex-1 w-full">
           <LexicalEditor

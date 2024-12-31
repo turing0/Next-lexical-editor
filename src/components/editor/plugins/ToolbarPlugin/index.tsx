@@ -388,20 +388,20 @@ export default function ToolbarPlugin({
   );
   const IconStyle = "w-4 h-4 ";
   const CommandList = [
-    {
-      label: "Undo",
-      command: () => activeEditor.dispatchCommand(UNDO_COMMAND, undefined),
-      disabled: !canUndo || !isEditable,
-      title: "Undo (Ctrl+Z)",
-      Icon: <Undo />,
-    },
-    {
-      label: "redo",
-      command: () => activeEditor.dispatchCommand(REDO_COMMAND, undefined),
-      disabled: !canRedo || !isEditable,
-      title: "Redo (Ctrl+Z)",
-      Icon: <Redo />,
-    },
+    // {
+    //   label: "Undo",
+    //   command: () => activeEditor.dispatchCommand(UNDO_COMMAND, undefined),
+    //   disabled: !canUndo || !isEditable,
+    //   title: "Undo (Ctrl+Z)",
+    //   Icon: <Undo />,
+    // },
+    // {
+    //   label: "redo",
+    //   command: () => activeEditor.dispatchCommand(REDO_COMMAND, undefined),
+    //   disabled: !canRedo || !isEditable,
+    //   title: "Redo (Ctrl+Z)",
+    //   Icon: <Redo />,
+    // },
     {
       label: "BlockType",
       disabled: !isEditable,
@@ -562,23 +562,23 @@ export default function ToolbarPlugin({
           let content;
 
           switch (command.label) {
-            case "Undo":
-            case "redo":
-              content = (
-                <ToolTip key={index} label={command.title!}>
-                  <Button
-                    size="icon"
-                    variant="ghost"
-                    disabled={command.disabled}
-                    onClick={command.command}
-                    title={command.title}
-                    type="button"
-                  >
-                    {command.Icon}
-                  </Button>
-                </ToolTip>
-              );
-              break;
+            // case "Undo":
+            // case "redo":
+            //   content = (
+            //     <ToolTip key={index} label={command.title!}>
+            //       <Button
+            //         size="icon"
+            //         variant="ghost"
+            //         disabled={command.disabled}
+            //         onClick={command.command}
+            //         title={command.title}
+            //         type="button"
+            //       >
+            //         {command.Icon}
+            //       </Button>
+            //     </ToolTip>
+            //   );
+            //   break;
 
             case "BlockType":
               if (blockType in blockTypeToBlockName && activeEditor === editor) {
