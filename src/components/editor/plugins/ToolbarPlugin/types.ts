@@ -1,10 +1,4 @@
-
-
-
-
 import { FC } from 'react';
-import { Redo,Undo,Heading1,Heading2,Heading3,Pilcrow} from 'lucide-react';
-
 
 type EventType = typeof eventType[keyof typeof eventType];
 
@@ -13,7 +7,6 @@ interface Plugin {
   Icon: FC;
   event: EventType;
 }
-
 
 export const eventType={
     redo:"redo",
@@ -43,14 +36,11 @@ const blockTypeToBlockName = {
     h5: 'Heading 5',
     h6: 'Heading 6',
     number: 'Numbered List',
-    paragraph: 'Normal',
+    paragraph: 'Paragraph',
     quote: 'Quote',
 };
 
 
-
-
 export {
     rootTypeToRootName,blockTypeToBlockName,
-
 }

@@ -123,13 +123,13 @@ export function BlockFormatDropDown({
   return (
     <DropDown
       disabled={disabled}
-      buttonClassName="flex flex-row  gap-x-3  items-center h-[32px] border-0"
+      buttonClassName="flex flex-row  gap-x-2 items-center h-[32px] border-0 px-2"
       buttonIconClassName={ActiveBlockIcon}
       buttonLabel={ActiveBlockName}
     >
       <DropDownItem className={"item "} onClick={formatParagraph}>
         <Pilcrow className="w-4 h-4"/>
-        <span className="text">Normal</span>
+        <span className="text">Paragraph</span>
       </DropDownItem>
       <DropDownItem onClick={() => formatHeading("h1")}>
         <Heading1 className="h-4 w-4" />
@@ -143,18 +143,6 @@ export function BlockFormatDropDown({
         <Heading3 className="w-4 h-4"/>
         <span className="text">Heading 3</span>
       </DropDownItem>
-      <DropDownItem onClick={formatBulletList}>
-        <List className="w-4 h-4"/>
-        <span className="text">Bullet List</span>
-      </DropDownItem>
-      <DropDownItem onClick={formatNumberedList}>
-        <ListOrderedIcon className="w-4 h-4"/>
-        <span className="text">Numbered List</span>
-      </DropDownItem>
-      <DropDownItem onClick={formatCheckList}>
-        <SquareCheck className="w-4 h-4" />
-        <span className="text">Check List</span>
-      </DropDownItem>
       <DropDownItem onClick={formatQuote}>
         <Quote className="w-4 h-4"/>
         <span className="text">Quote</span>
@@ -163,9 +151,21 @@ export function BlockFormatDropDown({
         <Code2 className="w-4 h-4"/>
         <span className="text">Code Block</span>
       </DropDownItem>
+      <DropDownItem onClick={formatBulletList}>
+        <List className="w-4 h-4"/>
+        <span className="text">Bullet List</span>
+      </DropDownItem>
+      <DropDownItem onClick={formatNumberedList}>
+        <ListOrderedIcon className="w-4 h-4"/>
+        <span className="text">Numbered List</span>
+      </DropDownItem>
+      {/* <DropDownItem onClick={formatCheckList}>
+        <SquareCheck className="w-4 h-4" />
+        <span className="text">Check List</span>
+      </DropDownItem> */}
       <DropDownItem
-          onClick={insertListToggle}
-        >
+        onClick={insertListToggle}
+      >
           <StepForward className="w-4 h-4"/>
           <span className="text">Toggle list</span>
       </DropDownItem>
