@@ -1,5 +1,6 @@
 
 "use client"
+
 import './index.css';
 import { IS_APPLE } from "../../shared/environment";
 
@@ -25,7 +26,7 @@ import {getDOMRangeRect} from '../../utils/getDOMRangeRect';
 import {getSelectedNode} from '../../utils/getSelectedNode';
 import {setFloatingElemPosition} from '../../utils/setFloatingElemPosition';
 import ToolButton from '@/components/ui/ToolButton';
-import { BoldIcon, Code2, Italic, Link2, Sparkles, StrikethroughIcon, UnderlineIcon } from 'lucide-react';
+import { BoldIcon, Code2, Italic, Link, Sparkles, StrikethroughIcon, UnderlineIcon } from 'lucide-react';
 import ToolTip from '@/providers/ToolTip';
 import { Separator } from '@/components/ui/separator';
 import FontDropDown from '../ToolbarPlugin/Font-DropDown';
@@ -57,8 +58,6 @@ function TextFormatFloatingToolbar({
   bgColor,
   fontColor,
   rootType,
-
-
 
 }: {
 
@@ -304,18 +303,18 @@ function TextFormatFloatingToolbar({
     //   active:isStrikethrough
     // },  
     {
+      label: "Link",
+      command: () => insertLink(),
+      title: "Insert link",
+      icon: <Link className={"w-4 h-4"} />,
+      active: isLink,
+    },
+    {
       label: "code",
       command: () => editor.dispatchCommand(FORMAT_TEXT_COMMAND, "code"),
       icon: <Code2 className={"w-4 h-4"} />,
       title: "Insert code block",
       active: isCode,
-    },
-    {
-      label: "Link",
-      command: () => insertLink(),
-      title: "Insert link",
-      icon: <Link2 className={"w-4 h-4"} />,
-      active: isLink,
     },
     // {
     //   lable:"div-1",
@@ -365,7 +364,6 @@ function TextFormatFloatingToolbar({
     // },
    
   ];
-
   
   return (
     <div ref={popupCharStylesEditorRef} className={
